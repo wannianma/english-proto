@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>看视频学英语 · 原型</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="titlebar">
+      <span id="lessonTitle" class="lesson-title">加载中…</span>
+      <button id="infoBtn" class="icon-btn" title="视频来源与授权">ⓘ</button>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button data-mode="bi" class="tab">双语</button>
+      <button data-mode="shadow" class="tab">跟读</button>
+      <button data-mode="cloze" class="tab">挖空</button>
+      <button data-mode="dict" class="tab">听写词</button>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="player">
+      <div class="video-wrap">
+        <video id="video" playsinline webkit-playsinline preload="auto"></video>
+        <div id="bigPlay" class="big-play">▶</div>
+      </div>
+      <div class="progress">
+        <span id="tCur">0:00</span>
+        <input id="seek" type="range" min="0" max="100" step="0.1" value="0">
+        <span id="tDur">0:00</span>
+      </div>
+    </section>
+
+    <section class="transcript" id="transcript" aria-label="字幕"></section>
+  </main>
+
+  <footer class="bottom">
+    <div class="playbar">
+      <button id="prevBtn" class="pb"><span class="ico">⏮</span><span>上一句</span></button>
+      <button id="playBtn" class="pb play"><span class="ico" id="playIco">▶</span><span id="playTxt">播放</span></button>
+      <button id="nextBtn" class="pb"><span class="ico">⏭</span><span>下一句</span></button>
+      <button id="loopBtn" class="pb"><span class="ico">🔁</span><span>复读</span></button>
+      <button id="speedBtn" class="pb"><span class="ico" id="speedVal">1.0x</span><span>倍速</span></button>
+    </div>
+    <nav class="bnav">
+      <button id="navVocab"><span class="ico">⭐</span><span>重点词</span></button>
+      <button id="navLearned"><span class="ico" id="learnedIco">○</span><span id="learnedTxt">标记已学</span></button>
+      <button id="navBook"><span class="ico">📒<b id="bookBadge" class="badge">0</b></span><span>生词本</span></button>
+      <button id="navToc"><span class="ico">☰</span><span>目录</span></button>
+    </nav>
+  </footer>
+</div>
+
+<div id="backdrop" class="backdrop" hidden></div>
+<div id="sheet" class="sheet" role="dialog" aria-modal="true" hidden>
+  <div class="sheet-handle"></div>
+  <div class="sheet-head"><h3 id="sheetTitle"></h3><button id="sheetClose" class="icon-btn">✕</button></div>
+  <div id="sheetBody" class="sheet-body"></div>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

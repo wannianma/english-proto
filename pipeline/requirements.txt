@@ -1,0 +1,5 @@
+faster-whisper>=1.0
+yt-dlp
+numpy
+# optional, only for pipeline/verify_ui.py
+playwright

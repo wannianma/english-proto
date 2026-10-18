@@ -1,0 +1,9 @@
+{
+ "lessons": [
+  {
+   "id": "nasa-coffee",
+   "title": "ScienceCasts: The Zero Gravity Coffee Cup",
+   "path": "lessons/nasa-coffee/lesson.json"
+  }
+ ]
+}

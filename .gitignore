@@ -1,0 +1,30 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 管线下载的原始媒体（pipeline/work/<id>/source.* 等），不入库
+lessons_work/
+pipeline/work/**/source.*
+pipeline/work/**/*.webm
+pipeline/work/**/*.mkv
+pipeline/work/**/*.mov
+pipeline/work/**/*.m4v
+pipeline/work/**/*.avi
+pipeline/work/**/*.wav
+pipeline/work/**/*.mp3
+pipeline/work/**/*.ogg
+pipeline/work/**/*.part
+pipeline/work/**/*.ytdl
+
+# 视频只跟踪随仓库附带的 NASA 公有领域样例
+*.mp4
+!lessons/nasa-coffee/video.mp4
+
+# 不用 --lesson-id 时，管线会写到仓库根下的 media/
+/media/
+
+.DS_Store
+Thumbs.db
